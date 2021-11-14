@@ -1,0 +1,23 @@
+<div class="page-container"> 
+    <div class="page-title">Secret Santa</div>
+
+    <div class="page-subtitle">Members</div>
+
+    <div class="members-container">
+        <div class="member-container" *ngFor="let member of members">
+            <div class="member">
+                <div>{{member['name']}}</div>
+                <img class="icon" src="https://avatars.dicebear.com/api/adventurer-neutral/{{member['id']}}.svg">
+            </div>
+            <div class="remove-button">
+                Remove
+            </div>
+        </div>
+    </div>
+
+    <div class="start-container">
+        <div>Code:</div>
+        <input #code type="number">
+        <button (click)="startGame(code.value)">Start</button>
+    </div>
+</div>

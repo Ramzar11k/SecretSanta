@@ -1,0 +1,14 @@
+<div class="page-container">
+    <div class="page-title">Secret Santa</div>
+    <div class="box-container" [formGroup]="form">
+        <div class="label-input">
+            <div class="lable">Name</div>
+            <input type="text" formControlName="name">
+        </div>
+        <div class="label-input">
+            <div class="lable">Email</div>
+            <input type="text" formControlName="email">
+        </div>
+        <button (click)="submit()">Start</button>
+    </div>
+</div>
