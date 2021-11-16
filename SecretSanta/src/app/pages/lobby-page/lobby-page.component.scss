@@ -31,7 +31,7 @@
 
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 3px 3px 7px black;
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 
             .member {
                 display: flex;
@@ -40,7 +40,7 @@
                 
                 background-color: rgba(224, 224, 224, 0.829);
 
-                padding: 0 5%;
+                padding: 0 30px;
 
                 width: 70%;
                 
