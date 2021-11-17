@@ -10,14 +10,11 @@ html, body {
     background-image: url(./assets/phone_background.png);
     background-size:auto;
     background-position-x: center;
-    background-position-y: center;
     background-repeat: no-repeat;
 }
 
 body {
     font-family: sans-serif, Arial, Helvetica, sans-serif;
-
-    overflow: hidden;
 
     @function random_range($min, $max) {
         $rand: random();

@@ -1,14 +1,37 @@
 <div class="page-container">
-    <div class="page-title">Secret Santa</div>
-    <div class="box-container" [formGroup]="form">
-        <div class="label-input">
-            <div class="lable">Name</div>
-            <input type="text" formControlName="name">
+    <div class="letter-container">
+        <div class="header">
+            <div class="letter-meta">
+                <div>Catre: Secret Santa</div>
+                <div>Destinatie: Polul Nord</div>
+            </div>
+            <img class="top-santa" src="../../../assets/adina/cute-santa-claus-with-sack-merry-christmas-design_159446-418.jpg"> 
         </div>
-        <div class="label-input">
-            <div class="lable">Email</div>
-            <input type="text" formControlName="email">
+        <span class="letter-intro">Draga Sercret Santa,</span>
+        <div class="letter-paragraph">&nbsp; &nbsp; Iti multumesc ca ai fost si esti in continuare alaturi de mine ca prieten, ca un om drag.</div>
+        <div class="letter-paragraph">&nbsp; &nbsp; Iti multumesc ca iti doresti ca printr-un gest magic sa aduci bucurie in sufletele noastre 
+            uneori triste, uneori mahnite, indiferent de greutatea darului.</div>
+        <div class="letter-paragraph">&nbsp; &nbsp; Iti multumesc din nou si draga Mosule sper ca nici tu, nici echipa ta de reni si spiridusi 
+            sa nu oboseasca in aceasta calatorie fermecata.</div>
+        <div class="letter-paragraph">&nbsp; &nbsp; Insa, draga Secret Santa, pentru a contribui la spiritul Craciunului care ne imbratiseaza din 
+            ce in ce mai strans odata cu apropierea acestei sarbatori este nevoie sa te loghezi mai jos pentru 
+            a vedea al cui suflet de copil vei lumina in acest an:</div>
+
+        <img class="bottom-santa" src="../../../assets/adina/istockphoto-1009934452-170667a.jpg">
+        <div class="form-container" [formGroup]="form">
+            <div class="round-input">
+                <span class="icon icon-person"></span>
+                <input type="text" placeholder="Nume" formControlName="name">
+            </div>
+            <div class="round-input">
+                <span class="icon icon-email"></span>
+                <input type="text" placeholder="E-mail" formControlName="email">
+            </div>
+            <button (click)="submit()">Start</button>
         </div>
-        <button (click)="submit()">Join</button>
+        <div class="signiture">
+            <div>Cu drag,</div>
+            <div>Un copil cuminte si bun</div>
+        </div>
     </div>
 </div>
