@@ -17,9 +17,24 @@
         width: 300px;
         background-color: rgb(255, 255, 255);
 
-        .top-santa {
-            height: 120px;
-            width: 120px;
+        z-index: 10;
+
+        .header {
+            display: flex;
+            align-items: center;
+
+            .top-santa {
+                margin-left: auto;
+                height: 120px;
+                width: 120px;
+            }
+
+            .letter-meta {
+                font-weight: bold;
+                display: flex;
+                flex-direction: column;
+                row-gap: 5px;
+            }
         }
 
         .bottom-santa {
@@ -30,13 +45,9 @@
             margin-bottom: 5px;
         }
 
-        .letter-meta {
-            font-weight: bold;
-        }
-
         .letter-intro {
             margin: auto;
-            margin-top: 30px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
