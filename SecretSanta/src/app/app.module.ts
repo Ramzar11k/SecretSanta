@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LobbyPageComponent } from './pages/lobby-page/lobby-page.component';
 import { LinkPageComponent } from './pages/link-page/link-page.component';
-import { AngularFireModule } from"@angular/fire/compat";
+
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const config = {
@@ -32,7 +35,8 @@ const config = {
     AppRoutingModule,
     AngularFireModule.initializeApp(config),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

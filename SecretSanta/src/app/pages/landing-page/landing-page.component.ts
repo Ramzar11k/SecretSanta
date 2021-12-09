@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { FormGroup, FormControl } from "@angular/forms";
 import { Router } from '@angular/router';
+import { IMember } from 'src/app/interfaces/member.interface';
+import { IRoom } from 'src/app/interfaces/room.interface';
 import * as uuid from 'uuid';
 
 @Component({
@@ -30,9 +32,11 @@ export class LandingPageComponent implements OnInit {
 
   async submit() {
     if (this.formIsValid()) {
-      let member = {
+      let member: IMember = {
+        id: uuid.v4(),
         name: this.name.value,
-        email: this.email.value
+        email: this.email.value,
+        ignoredMembers: []
       };
 
       await this.createNewRoom(member);
@@ -40,19 +44,13 @@ export class LandingPageComponent implements OnInit {
   }
 
   async createNewRoom(memberData: any) {
-    let newMember = {
-      id: uuid.v4(),
-      name: memberData.name,
-      email: memberData.email
-    };
-
-    let room = {
-      members: [newMember],
+    let room: IRoom = {
+      members: [memberData],
       status: "",
       startCode: this.generateStartCode()
     }
 
-    let newRoomId = uuid.v4();
+    let newRoomId = this.db.createPushId();
 
     let obj = this.db.object(`rooms/${newRoomId}`);
 
