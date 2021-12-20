@@ -38,7 +38,7 @@ export class LandingPageComponent implements OnInit {
         email: this.email.value,
         ignoredMembers: []
       };
-
+      
       await this.createNewRoom(member);
     }
   }

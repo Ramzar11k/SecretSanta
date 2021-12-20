@@ -68,6 +68,28 @@
             justify-content: center;
         }
     }
+
+    .joined-container {
+
+        z-index: 10;
+        
+        margin-top: 220px;
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 15px;
+
+        div {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .joined-image {
+            width: 300px;
+            height: 134px;
+            margin-bottom: 10px;
+        }
+    }
 }
 
 .form-container {

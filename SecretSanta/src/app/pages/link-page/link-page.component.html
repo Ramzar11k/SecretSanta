@@ -1,5 +1,5 @@
 <div class="page-container">
-    <div class="letter-container">
+    <div *ngIf="!joined" class="letter-container">
         <div class="header">
             <div class="letter-meta">
                 <div>Catre: Secret Santa</div>
@@ -33,5 +33,10 @@
             <div>Cu drag,</div>
             <div>Un copil cuminte si bun</div>
         </div>
+    </div>
+
+    <div class="joined-container" *ngIf="joined">
+        <img class="joined-image" src="../../../assets/adina/Ho_Ho_Ho_864x.jpg">
+        <div>Fantastic! Mosul este pe drum!</div>
     </div>
 </div>

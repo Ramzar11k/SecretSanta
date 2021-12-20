@@ -23,6 +23,8 @@ export class LinkPageComponent implements OnInit {
     email: this.email
   });
 
+  joined: boolean = false;
+
   constructor(private db: AngularFireDatabase, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -53,6 +55,8 @@ export class LinkPageComponent implements OnInit {
       };
 
       await this.joinRoom(member);
+
+      this.joined = true;
     }
   }
   
@@ -74,8 +78,11 @@ export class LinkPageComponent implements OnInit {
       res.members.push(newMember);
 
       obj.set(res);
-
-      this.router.navigate([`lobby/${this.route.snapshot.paramMap.get("id")}`]);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }
